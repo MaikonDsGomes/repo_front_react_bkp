@@ -1,0 +1,42 @@
+.conf_hist_button_avaliar_pop_box {
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        width: 33%;
+    }
+}
+
+.conf_hist_textarea {
+    resize: none;
+    height: 25vh;
+}
+
+/* botão que envolve cada estrela */
+.star-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    color: #ccc;
+    /* cor padrão */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+/* quando preenchida */
+.star-btn.filled {
+    & svg path {
+        color: var(--rosa-1);
+        /* rosa */
+    }
+}
+
+
+
+/* garante que o path do svg use a cor (currentColor) */
+.star-btn svg path {
+    fill: currentColor;
+}

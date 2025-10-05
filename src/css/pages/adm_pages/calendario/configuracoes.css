@@ -1,0 +1,204 @@
+.configuracao_line_box {
+
+    & a {
+        color: var(--rosa-1);
+    }
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & p {
+        width: auto;
+    }
+
+    & .configuracao_button_verde {
+        background-color: var(--verde);
+        padding: 16px 16px;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--rosa-4);
+        border-radius: 16px;
+    }
+
+     & .configuracao_button_vermelho {
+        background-color: var(--vermelho);
+        padding: 16px 16px;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--rosa-4);
+        border-radius: 16px;
+    }
+
+    & .configuracao_box_info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+
+        & .configuracao_capacidade_box {
+            display: flex;
+            align-items: center;
+        }
+
+        & .configuracao_horarios_box {
+            display: flex;
+            /* gap: 12%; */
+            max-width: 280px;
+            width: 100%;
+            background: var(--rosa-4);
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+
+            & .configuracao_seta_cinza_box {
+                background-color: #c2c2c2;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 48px;
+                width: 17%;
+            }
+
+            & .configuracao_horario_mini_box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        & .configuracao_ajuste_gap_box {
+            display: flex;
+            gap: 23px;
+            align-items: center;
+            width: 58%;
+            justify-content: center;
+        }
+    }
+}
+
+.horario_excecao_titulo_box {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+
+
+
+.configuracao_line_execao_box {
+
+    /* & a {
+        color: var(--rosa-1);
+    } */
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & p {
+        width: auto;
+    }
+
+    & .configuracao_button_verde {
+        background-color: var(--verde);
+        padding: 16px 16px;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--rosa-4);
+        border-radius: 16px;
+    }
+
+     & .configuracao_button_vermelho {
+        background-color: var(--vermelho);
+        padding: 16px 16px;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--rosa-4);
+        border-radius: 16px;
+    }
+
+    & .configuracao_box_info {
+        display: flex;
+        align-items: center;
+        gap: 5%;
+        width: 100%;
+
+        & .configuracao_capacidade_box {
+            display: flex;
+            align-items: center;
+        }
+
+        & .configuracao_horarios_box {
+            display: flex;
+            /* gap: 12%; */
+            max-width: 335px;
+            width: 100%;
+            background: var(--rosa-4);
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            /* padding: 1px 7%; */
+
+            & .configuracao_seta_cinza_box {
+                background-color: #c2c2c2;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0px 15px;
+                min-width: 48px;
+            }
+
+            & .configuracao_horario_mini_box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+        }
+
+        & .configuracao_ajuste_gap_box {
+            display: flex;
+            gap: 23px;
+            align-items: center;
+            width: 100%;
+            justify-content: flex-start;
+        }
+    }
+
+}
+
+.configuracao_line_box a {
+    color: var(--rosa-1);
+}
+.configuracao_line_box a:hover {
+    color: var(--marrom-1);
+}
+
+.configuracao_line_execao_box a {
+    color: var(--rosa-1);
+}
+.configuracao_line_execao_box a:hover {
+    color: var(--marrom-1);
+}
+
+.calendario_config_semana{
+    min-width: 180px;
+}

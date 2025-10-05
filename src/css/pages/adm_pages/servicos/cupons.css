@@ -1,0 +1,26 @@
+.dash_servico_cupom{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.dash_servico_input_cupom {
+  width: 100%;
+  height: 50px;
+  padding: 12px 14px;
+  /* border-radius: 16px; */
+  background-color: var(--cinza-1);
+  border: none;
+  border-bottom: 2px solid var(--marrom-1);
+  
+  /* padrao de input - para todas as paginas */
+}
+
+.dash_servico_input_pai {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: calc(50% - 5px);
+  height: auto;
+  /* Quando a input tiver um nome, a classe vai organizar o titulo com o campo de input */
+}

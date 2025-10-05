@@ -1,0 +1,33 @@
+.calendario_bolinha {
+    background: #c2c2c2;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.calendario_bolinha_cinza {
+    background: #c2c2c2;
+ 
+}
+
+.calendario_bolinha_rosa {
+    background: var(--rosa-1);
+
+}
+
+.calendario_box_info_historico_detalhes_agendamento {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & h4{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    & p{
+        color: #616161;
+    }
+
+}

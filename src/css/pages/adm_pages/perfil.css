@@ -1,0 +1,61 @@
+/* UNICA PAGINA PRINCIPAL ACESSADA PELA NAVBAR VERTICAL QUE NAO PRECISA DE UMA PASTA DEDICADA */
+
+.perfil_pai_box {
+
+    width: 100%;
+    padding: 0 10%;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
+
+    & .perfil_label_inp_box {
+        display: flex;
+        flex-direction: column;
+
+        & .btn-rosa {
+            cursor: pointer;
+        }
+
+    }
+
+    & .perfil_label_inp_duplo_box {
+        display: flex;
+
+        & .perfil_label_inp_duplo {
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    & input {
+        border-radius: 18px;
+        padding: 12px 16px;
+        border: none;
+    }
+
+    /* DIVS Com duas inputs alinhadas */
+
+    .perfil_log_box {
+
+        gap: 20px;
+
+        & .perfil_log {
+            width: 90%;
+        }
+
+    }
+
+    .perfil_meio_meio_box{
+
+        gap: 20px;
+
+        & div{
+            width: 100%;
+        }
+
+    }
+
+
+}

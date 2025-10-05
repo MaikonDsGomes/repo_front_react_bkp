@@ -1,0 +1,137 @@
+/* --- IMPORTANDO PADRÕES DO SITE --- */
+@import url(./partials/typography.css);
+@import url(./partials/colors.css);
+@import url(./partials/buttons.css);
+@import url(./partials/utils.css);
+
+/* --- IMPORTANDO PADRÕES DE POPUP--- */
+@import url(./popup/padraoPopup.css);
+@import url(./popup/concluirAgendamento.css);
+@import url(./popup/realizarAgendamento.css);
+@import url(./popup/horarioExcecao.css);
+
+/* --- IMPORTANDO AS PÁGINAS CLIENTE --- */
+/* Configurações */
+@import url(./pages/client_pages/configuracoes/cupons.css);
+@import url(./pages/client_pages/configuracoes/historico.css);
+@import url(./pages/client_pages/configuracoes/navbar_lateral.css);
+@import url(./pages/client_pages/configuracoes/perfil.css);
+@import url(./pages/client_pages/configuracoes/layout.css);
+/* Sessões Institucional */
+@import url(./pages/client_pages/sessoes_institucional/avaliacoes_section.css);
+@import url(./pages/client_pages/sessoes_institucional/especialidade_section.css);
+@import url(./pages/client_pages/sessoes_institucional/home_section.css);
+@import url(./pages/client_pages/sessoes_institucional/localiza_section.css);
+@import url(./pages/client_pages/sessoes_institucional/marina_points_section.css);
+@import url(./pages/client_pages/sessoes_institucional/portifolio_section.css);
+@import url(./pages/client_pages/sessoes_institucional/proximos_agendamentos_section.css);
+@import url(./pages/client_pages/sessoes_institucional/sobre_mim_section.css);
+@import url(./pages/client_pages/sessoes_institucional/catalogo_section.css);
+/* Outras páginas cliente */
+@import url(./pages/client_pages/cadastro.css);
+@import url(./pages/client_pages/footer.css);
+@import url(./pages/client_pages/login.css);
+@import url(./pages/client_pages/navbar_institucional.css);
+
+
+
+/* --- IMPORTANDO AS PÁGINAS ADM --- */
+/* Calendário */
+@import url(./pages/adm_pages/calendario/atendimentos_passados.css);
+@import url(./pages/adm_pages/calendario/configuracoes.css);
+@import url(./pages/adm_pages/calendario/visao_geral.css);
+/* Controle Mensal */
+@import url(./pages/adm_pages/controle_mensal/avaliacoes.css);
+@import url(./pages/adm_pages/controle_mensal/cancelamentos.css);
+@import url(./pages/adm_pages/controle_mensal/servicos.css);
+/* Serviços */
+@import url(./pages/adm_pages/servicos/cupons.css);
+@import url(./pages/adm_pages/servicos/servicos.css);
+/* Usuários */
+@import url(./pages/adm_pages/usuarios/clientes.css);
+@import url(./pages/adm_pages/usuarios/funcionarios.css);
+/* Outras páginas ADM */
+@import url(./pages/adm_pages/login.css);
+@import url(./pages/adm_pages/layout_dashboard.css);
+@import url(./pages/adm_pages/perfil.css);
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* LARGURA DA BARRA DE ROLAGEM */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* FUNDA DA BARRA DE ROLAGEM */
+::-webkit-scrollbar-track {
+    background: var(--rosa-3);
+}
+
+/* COR DA BARRA DE MEDIDA */
+::-webkit-scrollbar-thumb {
+    background: var(--rosa-1);
+    border-radius: 3px;
+}
+
+/* HOVER DA BARRA DE MEDIDA */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--rosa-1);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--rosa-3);
+    position: relative;
+}
+
+section{
+    width: 100vw;
+    height: auto;
+    position: relative;
+    padding: 0px 80px;   
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+textarea {
+    background-color: var(--rosa-2);
+    border: 1px solid var(--cinza-2);
+    border-radius: 8px;
+    padding: 10px;
+}
+

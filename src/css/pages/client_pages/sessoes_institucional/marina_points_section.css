@@ -1,0 +1,110 @@
+.marina_points_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 390px;
+
+    padding: 60px 0px;
+    gap: 48px;
+    background-color: var(--marrom-1);
+}
+
+.marina_points_title {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.marina_points_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.marina_points_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    gap: 24px;
+    max-height: 94px;
+}
+
+.marina_points_etapas {
+    display: flex;
+    flex-direction: row;
+    /* max-width: 865px; */
+    width: auto;
+    height: auto;
+    gap: -5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.marina_points_etapa_ativa {
+    /* max-width: 117px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* position: absolute; */
+
+    .marina_points_circle {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 32px;
+        background-color: var(--rosa-1);
+
+    }
+
+    .marina_points_conexao {
+        width: 183px;
+        height: 8px;
+        background-color: var(--rosa-1);
+        display: flex;
+        border-radius: 32px;
+    }
+}
+
+.marina_points_etapa_inativa {
+    /* max-width: 117px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* position: absolute; */
+
+    .marina_points_circle {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 32px;
+        background-color: var(--rosa-3);
+
+    }
+
+    .marina_points_conexao {
+        width: 183px;
+        height: 8px;
+        background-color: var(--rosa-3);
+        display: flex;
+        border-radius: 32px;
+    }
+}

@@ -1,0 +1,110 @@
+.login {
+  display: flex;
+  width: auto;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100vh;
+
+}
+
+.login__imagem {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+} 
+
+.login__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+.login__form {
+  background-color: var(--rosa-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50%;
+  /* padding-left: 100px;
+  padding-top: 150px; */
+  padding: 100px 80px;
+}
+
+.login__voltar {
+  display: flex;
+  color: var(--rosa-1);
+  font-size: 20px;
+  justify-content: start;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.login__voltar:hover{
+  color: var(--marrom-1);
+}
+
+
+.login__title {
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+
+.login__formulario {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+
+.login__form h1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.login__form p {
+  margin-bottom: 20px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login__btn {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.login__cadastro {
+  color: var(--rosa-1);
+  font-weight: 600;
+}
+
+.login__cadastro:hover {
+  text-decoration: underline;
+}
+
+.linha-horizontal {
+  width: 100%;
+  height: 1px;
+  background-color:black; /* ou qualquer cor desejada */
+  border: none;
+  margin: 24px 0;
+}

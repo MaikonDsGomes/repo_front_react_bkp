@@ -1,0 +1,125 @@
+/* ESTRUTURA PADRAO PARA INICIAR O DESNVOLVIMENTO DE QUALQUER PAGINA DASH */
+
+.dash_section_pai{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--rosa-4);
+}
+
+.dash_navbar_pai{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 256px;
+    height: 100vh;
+    background-color: var(--rosa-4);
+    border-right: 1px solid var(--rosa-2);
+    padding: 24px 16px 0px 16px;
+    /* background-color: brown; */
+}
+.dash_navbar_filho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    gap: 16px;
+    /* background-color: blue; */
+}
+.dash_navbar_column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 2px;
+}
+
+.dash_section_filho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: calc(100% - 256px);
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--cinza-1);
+    /* background-color: yellow; */
+
+    padding: 24px;
+    gap: 24px;
+}
+
+.dash_section_container{
+    /* ONDE O CONTEUDO DA PAGINA FICA */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    height: auto;
+    min-height: 20px;
+    gap: 16px;
+    /* background-color: red; */
+}
+
+
+
+.mini_nav_pai{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: auto;
+    gap: 24px;
+    border-bottom: 0.3px solid var(--marrom-1);
+}
+
+.mini_nav_filho{
+    display: flex;
+    width: auto;
+    height: auto;
+    /* border-bottom: 2px solid var(--marrom-1); */
+}
+
+.mini_nav_filho:hover{
+    display: flex;
+    width: auto;
+    height: auto;
+    border-bottom: 1px solid var(--marrom-1);
+}
+
+.mini_nav_filho_ativo{
+    display: flex;
+    width: auto;
+    height: auto;
+    border-bottom: 2px solid var(--marrom-1);
+}
+
+
+.card{
+    border-radius: 16px;
+    background-color: var(--rosa-4);
+    border: 1px solid var(--cinza-2);
+}
+
+.dash_lista_itens{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    height: auto;
+    gap: 24px;
+    /* background-color: green; */
+}

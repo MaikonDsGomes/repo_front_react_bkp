@@ -1,0 +1,26 @@
+.sobre_section_pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    height: 932px;
+    gap: 80px;
+
+    padding: 192px 0px 300px 0px;
+}
+
+.sobre_section_container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sobre_section_social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

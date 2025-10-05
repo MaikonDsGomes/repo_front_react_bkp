@@ -1,0 +1,115 @@
+/* POPPINS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* GEORGIA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Georgia:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+*:after,
+*:before {
+    font-family: "Poppins";
+    color: var(--marrom-1);
+}
+
+.bold{
+    font-weight: 600 !important;
+}
+
+.semibold{
+    font-weight: 550 !important;
+}
+
+.italic{
+    font-style: italic !important;
+}
+
+.underline{
+    text-decoration: underline !important;
+}
+
+@media (min-width: 1440px) {
+
+    /* Super Titulo */
+    .super-titulo {
+        font-family: 'Georgia', serif;
+        font-size: 64px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    /* Titulo 1 */
+    .titulo-1 {
+        font-family: 'Georgia', sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    /* SubTitulo */
+    .subtitulo {
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 120%;
+    }
+
+    /* Paragrafo 1 */
+    .paragrafo-1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+
+    /* Paragrafo 2 */
+    .paragrafo-2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+}
+
+@media (max-width: 1440px) {
+
+   /* Super Titulo - Mobile */
+    .super-titulo {
+        font-family: 'Georgia', serif;
+        font-size: 40px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    /* Titulo 1 - Mobile */
+    .titulo-1 {
+        font-family: 'Georgia', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    /* SubTitulo - Mobile */
+    .subtitulo {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 120%;
+    }
+
+    /* Paragrafo 1 - Mobile */
+    .paragrafo-1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+
+    /* Paragrafo 2 - Mobile */
+    .paragrafo-2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+}

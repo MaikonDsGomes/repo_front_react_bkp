@@ -1,0 +1,16 @@
+/* PADRÃO DE CORES - BASTA SEGUIR O PROTÓTIPO */
+:root{     
+    --rosa-1: #DD236D;
+    --rosa-2: #FFF0F6;
+    --rosa-3: #FFFAFC;
+    --rosa-4: #FFFFFF;
+    
+    --marrom-1: #211F1E;
+    --marrom-2: #675D58;
+    
+    --cinza-1: #F5F5F5;
+    --cinza-2: #D7D7D7;
+
+    --verde: #008704;
+    --vermelho: #B10009;     
+}

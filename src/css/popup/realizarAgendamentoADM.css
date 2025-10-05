@@ -1,0 +1,41 @@
+.calendario_box_down_boxes_popup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & select {
+        cursor: pointer;
+        padding: 10px 1px;
+        background-color: var(--rosa-2);
+        border-radius: 16px;
+        border: none;
+    }
+
+}
+
+.calendario_box_lbl_inp_popup {
+    display: flex;
+    flex-direction: column;
+
+    & input {
+        cursor: pointer;
+        padding: 10px 1px;
+        background-color: var(--rosa-2);
+        border-radius: 16px;
+        border: none;
+    }
+
+    & input:focus {
+        border: 2px solid var(--rosa-1);
+        /* borda verde */
+        outline: none;
+        /* remove o contorno padrão (opcional) */
+    }
+
+}
+
+.calendario_box_popup_realizar_agendamento_adm {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,160 @@
+/* PADRÕES PARA BOTÃO */
+
+.btn-rosa {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  max-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 16px;
+  gap: 10px;
+
+  border-radius: 32px;
+  background: var(--rosa-1);
+  color: var(--rosa-4);
+}
+
+.btn-branco {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  max-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 16px;
+  gap: 10px;
+
+  border-radius: 32px;
+  border: 2px solid var(--rosa-1);
+  background: var(--rosa-4);
+  color: var(--rosa-1);
+}
+
+.btn-verde {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  max-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 16px;
+  gap: 10px;
+
+  border-radius: 32px;
+  background: var(--verde);
+  color: var(--rosa-4);
+}
+
+.btn-vermelho {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  max-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 16px;
+  gap: 10px;
+
+  border-radius: 32px;
+  background: var(--vermelho);
+  color: var(--rosa-4);
+}
+
+.btn-navbar {
+  width: 100%;
+  height: auto;
+  min-height: 48px;
+  max-width: 224px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+
+  padding: 12px 8px 12px 8px;
+  gap: 8px;
+  border-radius: 16px;
+  border: var(--rosa-2) 1px solid;
+}
+
+.btn-navbar-ativo {
+  width: 100%;
+  height: auto;
+  min-height: 48px;
+  max-width: 224px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+
+  padding: 12px 8px 12px 8px;
+  gap: 8px;
+  border-radius: 16px;
+  border: var(--rosa-2) 1px solid;
+  background-color: var(--rosa-2);
+}
+
+.btn-sair {
+  width: 100%;
+  height: auto;
+  min-height: 48px;
+  max-width: 224px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+
+  padding: 12px 8px 12px 8px;
+  gap: 8px;
+  border-radius: 16px;
+  /* border: var(--rosa-2) 1px solid; */
+}
+
+
+
+.btn-rosa:hover {
+  background: #b81c59;
+  /* rosa-1 mais escuro */
+}
+
+.btn-branco:hover {
+  background: #f5f5f5;
+  /* cinza-1 suave */
+  border-color: #b81c59;
+  /* rosa-1 mais escuro */
+}
+
+.btn-verde:hover {
+  background: #006703;
+  /* verde mais escuro */
+}
+
+.btn-vermelho:hover {
+  background: #8a0007;
+  /* vermelho mais escuro */
+}
+
+.btn-navbar:hover {
+  background: var(--rosa-2);
+  /* rosa-2 suave */
+}
+
+.btn-sair:hover {
+  background: var(--rosa-2);
+  /* rosa-2 suave */
+}

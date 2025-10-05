@@ -1,0 +1,48 @@
+.atendimento_passados_card_box{
+
+    min-width: 740px;
+    width: auto;
+    height: auto;
+    background-color: var(--rosa-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 16px;
+
+    & .buttons_box_atendimento_passados_card_box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        & button{
+            width: 145px;
+        }
+
+    }
+    & .info_box_atendimento_passados_card_box{
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        
+
+            & img{
+                border-radius: 50px;
+            }
+
+            & p{
+                display: flex;
+                align-items: center;
+                /* margin-top: 4%; */
+                /* gap: 16px; */
+            }
+
+    }
+}
+.atendimentos_passados_infos{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}

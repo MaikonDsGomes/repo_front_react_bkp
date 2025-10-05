@@ -1,0 +1,69 @@
+/* --- EFEITOS --- */
+.shadow {
+  box-shadow: 0px 4px 10.6px 0px rgba(33, 31, 30, 0.15);
+  /* Classe util para quando um objeto precisar de sombra */
+}
+
+
+
+/* --- OBJETOS --- */
+
+
+.input_pai {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  /* background-color: red; */
+  /* Quando a input tiver um nome, a classe vai organizar o titulo com o campo de input */
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: var(--rosa-2);
+  border: none;
+  /* padrao de input - para todas as paginas */
+}
+
+.select {
+  width: 155px;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--rosa-1);
+  border: none;
+  border-radius: 32px;
+  color: var(--rosa-4);
+  padding: 0px 10px 0px 10px;
+}
+
+.btn-juntos {
+  display: flex;
+  gap: 16px;
+  /* Util para quando houver mais de um botão na mesma linha, eles fiquem juntos. */
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  height: 24px;
+  gap: 5px;
+  /* Classe util quando um icone antecede um texto  */
+}
+
+.estrelas {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+  /* Em todos os momentos que houver estrelas, essa classe vai organizar elas em linha. */
+}

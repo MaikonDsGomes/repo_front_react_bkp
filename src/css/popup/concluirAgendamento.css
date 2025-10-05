@@ -1,0 +1,28 @@
+.calendario_box_popup_concluir_agendamento {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendario_box_info_concluir_agendamento{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    & p{
+        display: flex;
+    }
+}
+
+.calendario_box_input_confirmar_agendamento {
+    display: flex;
+    flex-direction: column;
+
+    & input {
+        background-color: var(--rosa-2);
+        border: none;
+        padding: 5px;
+        border-radius: 10px;
+
+    }
+}

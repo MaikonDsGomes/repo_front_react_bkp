@@ -1,0 +1,28 @@
+.portifolio_section_pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    height: 982px;
+}
+
+.portifolio_section_title{
+    display: flex;
+    gap: 8px;
+    /* width: 1280px; */
+    /* text-align: start; */
+}
+
+.instagram-embed-container {
+    display: flex;
+    gap: 16px;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+        max-height: 440px !important;
+    }
+}
