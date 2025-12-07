@@ -4,7 +4,11 @@
   /* Classe util para quando um objeto precisar de sombra */
 }
 
-
+.line{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 
 /* --- OBJETOS --- */
 
@@ -46,6 +50,17 @@
   display: flex;
   gap: 16px;
   /* Util para quando houver mais de um botão na mesma linha, eles fiquem juntos. */
+}
+
+.btn-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  gap: 16px;
+  /* Util para quando houver mais de um botão na mesma linha, eles fiquem juntos e centralizados. */
 }
 
 .info {

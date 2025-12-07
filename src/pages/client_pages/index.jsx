@@ -5,6 +5,9 @@ import NavbarLandingPage from "/src/components/NavbarLandingPage.jsx";
 import Footer from "/src/components/Footer.jsx";
 import { buscarAvaliacoes } from "../../js/api/avaliacao.js"
 import { buscarInfoSalao } from "../../js/api/info_salao.js"
+import BotpressChat from "../../components/BotpressChat.jsx";
+
+
 
 // --- COMPONENTE ESPECIALIDADE ---
 function EspecialidadeCard({ icon, titulo, descricao }) {
@@ -61,20 +64,28 @@ function AvaliacaoCard({ nome, data, estrelas, servico, comentario, imagem }) {
   return (
     <div className="avaliacao_section_card shadow">
       <div className="avaliacao_section_card_infos">
-        <p className="paragrafo-2">{nome} • {data} •</p>
+          <img
+            className="card-foto-cliente-dashboard" 
+            src={`http://localhost:8080/usuarios/foto/${imagem}`}
+            onError={(e) => { e.target.src = "/src/assets/img/usuario_foto_def.png"; }}
+            alt="icon_perfil" 
+          />
+          <p className="semibold paragrafo-1">{nome}</p>
+      </div>
+      <div className="avaliacao_section_card_infos">
+        <p className="paragrafo-2">{data} •</p>
         <div className="estrelas">
           {Array.from({ length: 5 }).map((_, i) => (
             <img
               key={i}
-              src={`/src/assets/svg/${i < estrelas ? "icon_star_filled.svg" : "icon_star_outline.svg"}`}
+              src={`/src/assets/svg/${i < estrelas ? "icon_star_outline.svg " : "icon_star_filled.svg"}`}
               alt="estrela"
             />
           ))}
         </div>
       </div>
-      <p className="paragrafo-2 italic">Serviço realizado: {servico}</p>
-      <p className="paragrafo-2">{comentario}</p>
-      <img src={imagem} alt="imagem-avaliacao" className="img-avaliacao" />
+      <p className="paragrafo-2 italic"><span className="semibold"> Serviço realizado: </span> {servico}</p>
+      <p className="paragrafo-2">"{comentario}"</p>
     </div>
   );
 }
@@ -128,7 +139,6 @@ export default function Index() {
   return (
     <>
       <NavbarLandingPage />
-
       {/* Home */}
       <section className="home_section_pai">
         <div className="home_section_title">
@@ -165,9 +175,9 @@ export default function Index() {
         <p className="subtitulo portifolio_section_title"><a className="italic">Um pouco do meu trabalho!</a>😉</p>
         {/* <img src="/src/assets/img/portifolio_teste.png" alt="portifolio" /> */}
         <div className="instagram-embed-container">
-          <InstagramEmbed url="https://www.instagram.com/p/DJR2xteJD8D/?img_index=1" />
-          <InstagramEmbed url="https://www.instagram.com/p/DKPQwvDxGsr/?img_index=1" />
-          <InstagramEmbed url="https://www.instagram.com/p/DK2h471JEgA/?img_index=1" />
+          <InstagramEmbed url="https://www.instagram.com/p/DJR2xteJD8D" />
+          <InstagramEmbed url="https://www.instagram.com/p/DKPQwvDxGsr" />
+          <InstagramEmbed url="https://www.instagram.com/p/DK2h471JEgA" />
         </div>
         <a href="https://www.instagram.com/marinamotahair/" target="_blank" rel="noopener noreferrer">
           <button className="btn-rosa bold" style={{ height: "50px" }}>
@@ -179,15 +189,47 @@ export default function Index() {
 
 
       {/* Sobre mim */}
-      <section className="sobre_section_pai">
+      <section className="sobre_section_pai_1">
         <img src="/src/assets/img/marina_sobre_mim.png" alt="sobre-mim" style={{ height: "576px" }} />
         <div className="sobre_section_container">
           <p className="titulo-1" style={{ fontFamily: "Georgia" }}>Sobre Mim</p>
           <p className="paragrafo-2" style={{ maxWidth: "424px" }}>
-            Texto com uma breve descrição da Marina<br />
-            Texto com uma breve descrição da Marina<br />
-            Texto com uma breve descrição da Marina<br />
-            Texto com uma breve descrição da Marina
+            Olá! Sou a Marina Mota, cabeleireira com mais de 10 anos de experiência 
+            atendendo mulheres na região do ABC Paulista. Acredito que 
+            cada cabelo conta uma história, e meu trabalho é trazer à tona o melhor 
+            de cada mulher, com cuidado, técnica e muito brilho! 💖
+          </p>
+          <p className="paragrafo-2 italic sobre_section_social">
+            <img src="/src/assets/svg/icon_whatsapp 1.svg" alt="icon-zap" />
+            {infoSalao.telefone || '(11) 98765-4321'}
+          </p>
+          <p className="paragrafo-2 italic sobre_section_social">
+            <img src="/src/assets/svg/icon_instagram2.svg" alt="icon-insta" />
+            @marinamotahair
+          </p>
+          <button
+            className="btn-rosa"
+            onClick={() => navigate("/servicos")}
+          >
+            <img src="/src/assets/vector/icon_sum/jam-icons/Vector.svg" alt="" />
+            Agendar
+          </button>
+        </div>
+      </section>
+
+
+
+      <section className="sobre_section_pai_2">
+        <div className="sobre_mim_title">
+          <img src="/src/assets/img/marina_sobre_mim.png" alt="sobre-mim" style={{ height: "150px" }} />
+          <p className="titulo-1" style={{ fontFamily: "Georgia", fontSize: "50px" }}>Sobre <br/> Mim</p>
+        </div>
+        <div className="sobre_section_container">
+          <p className="paragrafo-2" style={{ maxWidth: "424px" }}>
+            Olá! Sou a Marina Mota, cabeleireira com mais de 10 anos de experiência 
+            atendendo mulheres na região do ABC Paulista. Acredito que 
+            cada cabelo conta uma história, e meu trabalho é trazer à tona o melhor 
+            de cada mulher, com cuidado, técnica e muito brilho! 💖
           </p>
           <p className="paragrafo-2 italic sobre_section_social">
             <img src="/src/assets/svg/icon_whatsapp 1.svg" alt="icon-zap" />
@@ -234,7 +276,7 @@ export default function Index() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.6253637830596!2d-46.5593502!3d-23.657927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce425d6f37e0cf%3A0x92b7fbb1e0c21678!2sR.%20Adamantina%2C%2034%20-%203%20-%20Baeta%20Neves%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009760-340!5e0!3m2!1spt-BR!2sbr!4v1692279080345!5m2!1spt-BR!2sbr"
               width="100%"
               height="100%"
-              style={{ border: 0, borderRadius: "0px 0px 32px 32px" }}
+              style={{ border: 0, borderRadius: "0px 0px 16px 16px" }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -256,7 +298,7 @@ export default function Index() {
                 estrelas={dado.notaServico}
                 servico={dado.nomeServico}
                 comentario={dado.descricaoServico}
-                imagem={dado.imagem || '/src/assets/img/mock_avaliacao/Team-member.png'}
+                imagem={dado.idUsuario}
               />
             ))}
           </div>
@@ -269,12 +311,15 @@ export default function Index() {
                 estrelas={dado.notaServico}
                 servico={dado.nomeServico}
                 comentario={dado.descricaoServico}
-                imagem={dado.imagem || '/src/assets/img/mock_avaliacao/Team-member.png'}
+                imagem={dado.idUsuario}
               />
             ))}
           </div>
         </div>
       </section>
+
+
+      <BotpressChat/>
 
       {/* Footer */}
       <Footer />

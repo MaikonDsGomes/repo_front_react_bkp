@@ -1,47 +1,102 @@
-.card_historico{
-    display: flex;
-    flex-direction: row;
-    max-width: 734px;
-    max-height: 168px;
-    min-height: 170px;
-    justify-content: space-between;
-    padding: 32px 32px;
-    width: 100%;
-    height: auto;
-    background-color: #FFF0F6;
-    border-radius: 16px;
-
-    & .esquerda{
-        /* padding: 30px; */
-        gap: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-    }
-
-    & .campos{
+@media (min-width: 1440px) {
+    .card_historico{
         display: flex;
         flex-direction: row;
-        gap: 5px;
+        max-width: 734px;
+        max-height: 168px;
+        min-height: 170px;
+        justify-content: space-between;
+        padding: 32px 32px;
+        width: 100%;
+        height: auto;
+        background-color: #FFF0F6;
+        border-radius: 16px;
 
-        & .data{
+        & .esquerda{
+            /* padding: 30px; */
+            gap: 15px;
             display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+        }
+
+        & .campos{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+            & .data{
+                display: flex;
+            }
+        }
+
+        & .direita{
+            align-self: center;
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 15%;
         }
     }
 
-    & .direita{
-        align-self: center;
-        gap: 16px;
+    .config_historico_lista{
         display: flex;
         flex-direction: column;
-        padding-left: 15%;
+        gap: 16px;
+        width: 100%;
     }
 }
+@media (max-width: 1440px) {
+    .card_historico{
+        display: flex;
+        flex-direction: column;
+        max-width: 734px;
+        max-height: 192px;
+        min-height: 170px;
+        justify-content: space-between;
+        padding: 24px 32px;
+        width: 100%;
+        height: auto;
+        background-color: #FFF0F6;
+        border-radius: 16px;
 
-.config_historico_lista{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
+        & .esquerda{
+            /* padding: 30px; */
+            gap: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+        }
+
+        & .campos{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 5px;
+
+            & .data{
+                display: flex;
+            }
+        }
+
+        & .direita{
+            align-self: center;
+            gap: 16px;
+            display: flex;
+            flex-direction: row;
+
+            button{
+                width: 124px;
+            }
+        }
+    }
+
+    .config_historico_lista{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
 }

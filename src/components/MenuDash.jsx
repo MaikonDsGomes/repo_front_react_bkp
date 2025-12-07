@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation} from "react-router-dom";
 import { logout } from "../js/api/usuario";
 
 export default function MenuDash({ children }) {
@@ -10,6 +10,15 @@ export default function MenuDash({ children }) {
     // lógica de logout aqui
     console.log("Logout");
   };
+
+  const [usuario, setUsuario] = useState(null);
+    useEffect(() => {
+      const usuarioStorage = localStorage.getItem("usuario");
+      if (usuarioStorage) {
+        const user = JSON.parse(usuarioStorage);
+        setUsuario(user);
+      }
+    }, []);
 
   // Função para determinar se a rota está ativa
   const isActive = (path) => location.pathname === path;
@@ -24,48 +33,87 @@ export default function MenuDash({ children }) {
               alt="icone"
               style={{ maxWidth: "169px" }}
             />
-            <p className="paragrafo-e bold">Bem vinda Marina!</p>
+            {/* show first name (or fallback) */}
+            <p className="paragrafo-e bold">Bem vinda(o) {usuario?.nome ? usuario.nome.split(' ')[0] : ''}!</p>
             <div className="dash_navbar_column">
               <button
-                className={isActive("/adm/calendario-visao-geral") ? "btn-navbar-ativo" : "btn-navbar"}
+                className={
+                  isActive("/adm/calendario-visao-geral") ||
+                    isActive("/adm/calendario-atendimentos") ||
+                    isActive("/adm/calendario-configuracoes")
+                    ? "btn-navbar-ativo"
+                    : "btn-navbar"}
                 onClick={() => navigate("/adm/calendario-visao-geral")}
               >
                 <img
                   style={{ maxWidth: "24px" }}
-                  src="/src/assets/svg/nav_dash/icon_house_filled.svg"
+                  src={
+                    (isActive("/adm/calendario-visao-geral") ||
+                      isActive("/adm/calendario-atendimentos") ||
+                      isActive("/adm/calendario-configuracoes"))
+                      ? "/src/assets/svg/nav_dash/icon_house_filled.svg"
+                      : "/src/assets/svg/nav_dash/icon_house_outline.svg"
+                  }
                   alt=""
                 />
                 Calendário
               </button>
               <button
-                className={isActive("/adm/servicos-servicos") ? "btn-navbar-ativo" : "btn-navbar"}
+                className={
+                  isActive("/adm/servicos-servicos") ||
+                  isActive("/adm/servicos-cupos")
+                  ? "btn-navbar-ativo" 
+                  : "btn-navbar"}
                 onClick={() => navigate("/adm/servicos-servicos")}
               >
                 <img
                   style={{ maxWidth: "24px" }}
-                  src="/src/assets/svg/nav_dash/icon_tesoura_outline.svg"
+                  src={
+                    (isActive("/adm/servicos-servicos") ||
+                      isActive("/adm/servicos-cupos"))
+                      ? "/src/assets/svg/nav_dash/icon_tesoura_filled.svg"
+                      : "/src/assets/svg/nav_dash/icon_tesoura_outline.svg"
+                  }
                   alt=""
                 />
                 Serviços
               </button>
               <button
-                className={isActive("/adm/usuarios-clientes") ? "btn-navbar-ativo" : "btn-navbar"}
+                className={
+                  isActive("/adm/usuarios-clientes") ||
+                  isActive("/adm/usuarios-funcionarios")
+                  ? "btn-navbar-ativo" : "btn-navbar"}
                 onClick={() => navigate("/adm/usuarios-clientes")}
               >
                 <img
                   style={{ maxWidth: "24px" }}
-                  src="/src/assets/svg/nav_dash/icon_user_outline.svg"
+                  src={
+                    (isActive("/adm/usuarios-clientes") ||
+                      isActive("/adm/usuarios-funcionarios"))
+                      ? "/src/assets/svg/nav_dash/icon_user_filled.svg"
+                      : "/src/assets/svg/nav_dash/icon_user_outline.svg"
+                  }
                   alt=""
                 />
                 Usuários
               </button>
               <button
-                className={isActive("/adm/controle-servicos") ? "btn-navbar-ativo" : "btn-navbar"}
+                className={
+                  isActive("/adm/controle-servicos") ||
+                  isActive("/adm/controle-cancelamentos") ||
+                  isActive("/adm/controle-avaliacoes")
+                  ? "btn-navbar-ativo" : "btn-navbar"}
                 onClick={() => navigate("/adm/controle-servicos")}
               >
                 <img
                   style={{ maxWidth: "24px" }}
-                  src="/src/assets/svg/nav_dash/icon_doc_outline.svg"
+                  src={
+                    (isActive("/adm/controle-servicos") ||
+                      isActive("/adm/controle-cancelamentos") ||
+                      isActive("/adm/controle-avaliacoes"))
+                      ? "/src/assets/svg/nav_dash/icon_doc_filled.svg"
+                      : "/src/assets/svg/nav_dash/icon_doc_outline.svg"
+                  }
                   alt=""
                 />
                 Controle Mensal
@@ -76,7 +124,11 @@ export default function MenuDash({ children }) {
               >
                 <img
                   style={{ maxWidth: "24px" }}
-                  src="/src/assets/svg/nav_dash/icon_smile_outline.svg"
+                  src={
+                    isActive("/adm/perfil")
+                      ? "/src/assets/svg/nav_dash/icon_smile_filled.svg"
+                      : "/src/assets/svg/nav_dash/icon_smile_outline.svg"
+                  }
                   alt=""
                 />
                 Perfil
@@ -93,7 +145,7 @@ export default function MenuDash({ children }) {
           </div>
         </div>
         <div className="dash_section_filho">
-        {children}
+          {children}
         </div>
 
       </div>

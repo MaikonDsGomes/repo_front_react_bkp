@@ -25,7 +25,9 @@ export default function Login() {
         <div className="login__form">
           <button href="index.html" className="login__voltar paragrafo-2" onClick={() => navigate("/")}>← Voltar</button>
           <div className="login__title">
-            <h1 className="titulo-1">Bem vinda(o) de volta!</h1>
+            <h1 className="titulo-1">Boas-vindas!</h1>
+            <p className="paragrafo-1 semibold">Preencha os campos para entrar.</p>
+
           </div>
           {/* <form onSubmit={handleSubmit} className="login__formulario "> */}
           <form onSubmit={handleSubmit} className="login__formulario">

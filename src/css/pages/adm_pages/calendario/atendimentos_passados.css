@@ -46,3 +46,17 @@
     flex-direction: row;
     gap: 16px;
 }
+
+.card_pagamento_pendente{
+    border: 3px solid var(--vermelho) !important;
+}
+.pagamento_pendente{
+    color: var(--vermelho) !important;
+}
+
+.card_agendamento_concluido{
+    /* border: 3px solid var(--verde) !important; */
+}
+.controle_agendamento_concluido{
+    color: var(--verde) !important;
+}

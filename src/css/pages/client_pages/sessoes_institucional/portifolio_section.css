@@ -21,8 +21,34 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
+    max-width: 100vw;
+    
+    /* If children exceed max-width, allow horizontal scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+    flex-wrap: nowrap; /* prevent items from wrapping so scrollbar appears */
+    padding-bottom: 8px; /* give room for scrollbar */
+
+    /* custom scrollbar styling (WebKit) */
+    &::-webkit-scrollbar {
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 6px;
+    }
+
+    /* Firefox scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.2) transparent;
 
     iframe {
         max-height: 440px !important;
     }
+
 }

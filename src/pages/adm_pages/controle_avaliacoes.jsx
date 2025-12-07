@@ -7,7 +7,10 @@ import { buscarAvaliacoes } from "../../js/api/elerson.js";
 
 export default function Controle_avaliacoes() {
   const navigate = useNavigate();
-  const [mesSelecionado, setMesSelecionado] = useState("jan");
+  // Obter mês atual
+  const mesAtual = ["jan", "fev", "mar", "abr", "mai", "jun", 
+                    "jul", "ago", "set", "out", "nov", "dez"][new Date().getMonth()];
+  const [mesSelecionado, setMesSelecionado] = useState(mesAtual);
   const [avaliacoes, setAvaliacoes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,10 +20,12 @@ export default function Controle_avaliacoes() {
       try {
         setLoading(true);
         const dados = await buscarAvaliacoes();
+        console.log("Avaliações recebidas da API:", dados);
         
         // Transformar os dados da API para o formato esperado pelo componente
         const avaliacoesFormatadas = dados.map((item) => ({
           id: item.id,
+          idCliente: item.idUsuario,
           clienteNome: item.nomeUsuario,
           servicoNome: item.nomeServico,
           dataHoraISO: item.dataHorario, // Já está no formato ISO
@@ -84,7 +89,7 @@ export default function Controle_avaliacoes() {
               <ControleItemCard
                 key={a.id}
                 tipo="avaliacao"
-                fotoUrl={a.fotoUrl}
+                fotoUrl={a.idCliente}
                 clienteNome={a.clienteNome}
                 servicoNome={a.servicoNome}
                 dataHoraISO={a.dataHoraISO}

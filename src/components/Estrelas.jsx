@@ -12,7 +12,7 @@ export default function Estrelas({
     itens.push(
       <img
         key={i}
-        src={filled ? filledSrc : outlineSrc}
+        src={filled ? outlineSrc : filledSrc}
         alt={filled ? "estrela preenchida" : "estrela vazia"}
         style={{ width: size, height: size }}
       />

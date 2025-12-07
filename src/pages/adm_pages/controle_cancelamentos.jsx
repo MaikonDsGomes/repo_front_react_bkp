@@ -7,7 +7,10 @@ import { buscarCancelamentosDashboard } from "../../js/api/elerson.js";
 
 export default function Controle_cancelamentos() {
   const navigate = useNavigate();
-  const [mesSelecionado, setMesSelecionado] = useState("jan");
+  // Obter mês atual
+  const mesAtual = ["jan", "fev", "mar", "abr", "mai", "jun", 
+                    "jul", "ago", "set", "out", "nov", "dez"][new Date().getMonth()];
+  const [mesSelecionado, setMesSelecionado] = useState(mesAtual);
   const [cancelamentos, setCancelamentos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +24,7 @@ export default function Controle_cancelamentos() {
         // Transformar os dados da API para o formato esperado pelo componente
         const cancelamentosFormatados = dados.map((item) => ({
           id: item.id,
+          idCliente: item.idCliente,
           clienteNome: item.nomeCliente,
           servicoNome: item.nomeServico,
           dataHoraISO: `${item.dataServico}T00:00:00.000Z`, // Converter data para ISO
@@ -30,6 +34,7 @@ export default function Controle_cancelamentos() {
         }));
         
         setCancelamentos(cancelamentosFormatados);
+        console.log("Cancelamentos carregados com sucesso!", dados);
       } catch (error) {
         console.error("Erro ao carregar cancelamentos:", error);
       } finally {
@@ -83,7 +88,7 @@ export default function Controle_cancelamentos() {
               <ControleItemCard
                 key={c.id}
                 tipo="cancelamento"
-                fotoUrl={c.fotoUrl}
+                fotoUrl={c.idCliente} // Usar ID para foto de perfil
                 clienteNome={c.clienteNome}
                 servicoNome={c.servicoNome}
                 dataHoraISO={c.dataHoraISO}

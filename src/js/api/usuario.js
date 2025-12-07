@@ -1,12 +1,12 @@
-import { mensagemErro, mensagemSucesso } from '../utils';
+import { mensagemErro, mensagemSucesso, validarCamposCadastro } from '../utils';
 
-function cadastrarCliente() {
+export function cadastrarCliente(form, navigate) {
 
-  const nome = document.getElementById("cadastro_form_nome").value;
-  const email = document.getElementById("cadastro_form_email").value;
-  const telefone = document.getElementById("cadastro_form_telefone").value;
-  const senha = document.getElementById("cadastro_form_senha").value;
-  const senhaConfirmar = document.getElementById("cadastro_form_confirmar").value;
+  const nome = form.nome;
+  const email = form.email;
+  const telefone = form.telefone;
+  const senha = form.senha;
+  const senhaConfirmar = form.confirmar;
 
   const validar = validarCamposCadastro(nome, telefone, email, senha, senhaConfirmar);
 
@@ -23,69 +23,32 @@ function cadastrarCliente() {
       },
       body: JSON.stringify({ nome, email, senha, telefone })
     })
-      .then(resposta => resposta.json())
+      .then(resposta => {
+        if (resposta.status === 400) {
+          mensagemErro("Usuário já cadastrado");
+          throw new Error("Usuário já cadastrado");
+        }
+        return resposta.json();
+      })
       .then(dados => {
         mensagemSucesso("Cadastro realizado com sucesso!");
-        loginComParametroPosCad(email, senha);
+        setTimeout(() => {
+          login(email, senha, navigate, true);
+        }, 1500);
       })
       .catch(erro => {
         console.error("Erro no cadastro:", erro);
-        mensagemErro("Erro ao cadastrar. Tente novamente.");
+        if (erro.message !== "Usuário já cadastrado") {
+          mensagemErro("Erro ao cadastrar. Tente novamente.");
+        }
       });
+
 
   }
 
 }
 
-function loginComParametroPosCad(email, senha) {
-
-  fetch("http://localhost:8080/usuarios/login", {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, senha })
-  })
-    .then(resposta => resposta.json())
-    .then(dados => {
-      if (dados) {
-
-        localStorage.setItem("usuario", JSON.stringify(dados));
-        localStorage.setItem('isLoggedIn', '1')
-
-        if (dados.tipoUsuario.descricao == "CLIENTE") {
-
-          console.log("Cliente logado:", dados.nome);
-          mensagemSucesso("Login realizado com sucesso!")
-
-          setTimeout(function () {
-            window.location.href = "/html/client_pages/servicos.html";
-          }, 1500);
-
-        } else if (dados.tipoUsuario.descricao == "FUNCIONARIO" || dados.tipoUsuario.descricao == "ADMINISTRADOR") {
-          console.log("Fun ou administrador logado:", dados.nome);
-          mensagemSucesso("Login realizado com sucesso!")
-          window.location.href = "/html/adm_pages/calendario_visao_geral.html";
-        }
-
-
-        console.log("Usuário logado:", dados.nome);
-
-      } else {
-        mensagemErro("E-mail ou senha inválidos.");
-
-      }
-    })
-    .catch(erro => {
-      mensagemErro("E-mail ou senha inválidos.");
-      console.error("Erro no login:", erro);
-    });
-}
-
-
-// cliente.js
-export function login(email, senha, navigate) {
-
+export function login(email, senha, navigate, posCadastro = false) {
 
   return fetch("http://localhost:8080/usuarios/login", {
     method: "PATCH",
@@ -99,22 +62,12 @@ export function login(email, senha, navigate) {
       if (dados) {
         localStorage.setItem("usuario", JSON.stringify(dados));
         localStorage.setItem("usuarioLogado", "1");
-        
-        // if (dados.tipoUsuario.descricao === "CLIENTE") {
-        //   console.log("Cliente logado:", dados.nome);
-
-        // } else if (
-        //   dados.tipoUsuario.descricao === "FUNCIONARIO" ||
-        //   dados.tipoUsuario.descricao === "ADMINISTRADOR"
-        // ) {
-        //   console.log("Fun ou administrador logado:", dados.nome);
-        //   mensagemSucesso("Login realizado com sucesso!");
-        //   window.location.href = "/html/adm_pages/calendario_visao_geral.html";
-        // }
 
         if (dados.tipoUsuario.descricao === "CLIENTE") {
           // Espera um tempo se quiser mostrar mensagem
-          mensagemSucesso("Login realizado com sucesso!");
+          if (posCadastro == false) {
+            mensagemSucesso("Login realizado com sucesso!");
+          }
           setTimeout(() => {
             navigate("/servicos"); // <- navega para a rota do cliente
           }, 1500);

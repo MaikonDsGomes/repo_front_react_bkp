@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api_port";
 
 export async function buscarProximosAgendamentosFuncionario(idFuncionario) {
   try {
     const id = Number(idFuncionario); 
-    const response = await axios.get(`http://localhost:8080/agendamento/proximos-funcionario/${id}`);return response.data;
+    const response = await api.get(`http://localhost:8080/agendamento/proximos-funcionario/${id}`);return response.data;
   } catch (error) {
     console.error("Erro ao buscar agendamentos:", error);
     throw error;
@@ -14,7 +14,7 @@ export async function buscarProximosAgendamentosFuncionario(idFuncionario) {
 export async function buscarAtendimentosPassadosPorIdFuncionario(idFuncionario) {
   try {
     const id = Number(idFuncionario); 
-    const response = await axios.get(`http://localhost:8080/agendamento/passados-funcionario/${id}`);
+    const response = await api.get(`http://localhost:8080/agendamento/passados-funcionario/${id}`);
     console.log(response.data)
     return response.data;
 
@@ -27,8 +27,8 @@ export async function buscarAtendimentosPassadosPorIdFuncionario(idFuncionario) 
 export async function concluirAgendamento(idAgendamento, valor) {
    try {
     const id = Number(idAgendamento); 
-    const responsePreco = await axios.patch(`http://localhost:8080/agendamento/valor/${id}/${valor}`);
-    const responseStatus = await axios.patch(`http://localhost:8080/agendamento/status/${id}/5`);
+    const responsePreco = await api.patch(`http://localhost:8080/agendamento/valor/${id}/${valor}`);
+    const responseStatus = await api.patch(`http://localhost:8080/agendamento/status/${id}/5`);
     console.log(id + " @#@# " + responseStatus.data)
     console.log(responsePreco.data)
 
@@ -44,7 +44,7 @@ export async function concluirAgendamento(idAgendamento, valor) {
 export async function buscarDetalhesAgendamento(idAgendamento) {
    try {
     const id = Number(idAgendamento); 
-    const response = await axios.patch(`http://localhost:8080/agendamento/buscarDetalhesAgendamento${id}`);
+    const response = await api.patch(`http://localhost:8080/agendamento/buscarDetalhesAgendamento${id}`);
     console.log(response.data)
     return response.data;
 

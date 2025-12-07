@@ -1,86 +1,151 @@
-.home_session_pai {
-    height: 640px;
-    padding-top: 160px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
+@media (min-width: 1440px) {
 
-    h2 {
-        margin-bottom: 40px;
-    }
-}
-
-
-.conteudo_proximo_agendamento {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.card_proximo_agendamento {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    maX-width: 734px;
-    max-height: 186px;
-    height: auto;
-    width: auto;
-
-    border-radius: 32px;
-    background-color: #ffffff;
-    padding: 40px 30px;
-    border: 1px solid;
-    border-color: var(--cinza-2);
-
-    /* .botoes{
-
-        button{
-            padding: 30px 50px;
-            font-size: 1.1rem;
-
-        }
-
-    } */
-    button {
-        height: 50px;
-        width: 180px;
-    }
-
-    .conteudo {
+    .home_session_pai {
+        height: 640px;
+        padding-top: 160px;
+        padding-bottom: 80px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 100%;
 
-        img {
-            width: 7%;
+        h2 {
+            margin-bottom: 40px;
         }
-
     }
 
-    /* .conteudo p{
+
+    .conteudo_proximo_agendamento {
         display: flex;
-        font-family: 'Poppins', sans-serif;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card_proximo_agendamento {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        maX-width: 734px;
+        max-height: 186px;
+        height: auto;
+        width: auto;
+
+        border-radius: 32px;
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border: 1px solid;
+        border-color: var(--cinza-2);
+
+        /* .botoes{
+
+            button{
+                padding: 30px 50px;
+                font-size: 1.1rem;
+
+            }
+
+        } */
+
+        button {
+            height: 50px;
+            width: 180px;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+
+            img {
+                width: 7%;
+            }
+
+        }
     }
 
-    .botoes{
-        gap: 16px;
-        height: auto;
+
+    .hist_agendamento {
+        color: var(--rosa-1);
+        font-family: p;
+        font-weight: 600;
+        margin-top: 10px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
         display: flex;
-        flex-direction: column;
-    } */
-
-
+    }
 }
 
+@media (max-width: 1440px) {
 
-.hist_agendamento {
-    color: var(--rosa-1);
-    font-family: p;
-    font-weight: 600;
-    margin-top: 10px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
+    .home_session_pai {
+        height: 640px;
+        padding-top: 160px;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 40px;
+        }
+    }
+
+
+    .conteudo_proximo_agendamento {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card_proximo_agendamento {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 428px;
+        max-height: 142px;
+        height: auto;
+        width: auto;
+
+        border-radius: 32px;
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border: 1px solid;
+        border-color: var(--cinza-2);
+
+        /* .botoes{
+
+            button{
+                padding: 30px 50px;
+                font-size: 1.1rem;
+
+            }
+
+        } */
+
+        button {
+            height: 50px;
+            width: 112px;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+
+            img {
+                width: 7%;
+            }
+
+        }
+    }
+
+
+    .hist_agendamento {
+        color: var(--rosa-1);
+        font-family: p;
+        font-weight: 600;
+        margin-top: 10px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+    }
 }

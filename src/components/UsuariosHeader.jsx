@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export default function UsuariosHeader({
   tipo = "clientes",           // "clientes" | "funcionarios"
   onButtonClick,
-  iconSrc = "/src/assets/icons/plus-icon.svg",
+  iconSrc = "/src/assets/vector/icon_sum/jam-icons/Vector.svg",
   titulo,                      // opcional
   label,                       // opcional
 }) {
@@ -34,7 +34,7 @@ export default function UsuariosHeader({
       <div className="dash_section_container_header_usuarios usuarios_clientes_titulo_box">
         <h1 className="titulo-1">{tituloFinal}</h1>
         <button className="btn-rosa" onClick={onButtonClick}>
-          <img src={iconSrc} alt="" />
+          <img src="/src/assets/vector/icon_sum/jam-icons/Vector.svg" alt="" />
           {labelFinal}
         </button>
       </div>

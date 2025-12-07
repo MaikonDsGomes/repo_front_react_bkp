@@ -84,3 +84,85 @@
     vertical-align: middle;
     /* alinha melhor com o texto */
 }
+
+.form-cliente-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--rosa-4);
+  border-radius: 16px;
+  padding: 32px;
+  align-items: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-cliente {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  border: none;
+  outline: none;
+  background-color: #fff0f6; /* var(--rosa-2) */
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: 2px solid var(--rosa-1);
+}
+
+.botoes-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* --- Mantém toda a estrutura que você já tinha --- */
+
+/* Desfoque quando o formulário estiver aberto */
+.blur-ativo {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.2s ease;
+}
+
+/* Overlay escurecido */
+.overlay-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+Container do formulário
+.overlay-form .form-cliente-container {
+  background: var(--rosa-4);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}

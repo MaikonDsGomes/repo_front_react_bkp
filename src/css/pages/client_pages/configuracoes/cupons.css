@@ -9,54 +9,106 @@
     }
 
 }
-
-.cards_pai{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: -25px;
-
-    .card_cupom{
-        max-width: 780px;
-        max-height: 230px;
+@media (min-width: 1440px) {
+    .cards_pai{
         width: 100%;
-        height: 100%;
-        background-color: var(--rosa-2);
-        border-radius: 16px;
-        padding: 20px 32px;
+        height: auto;
         display: flex;
         flex-direction: column;
+        gap: 16px;
+        margin-top: -25px;
 
-        & .titulo{
-            font-weight: bold;
-            font-size: 24px;
-            
-        }
+        .card_cupom{
+            max-width: 780px;
+            max-height: 230px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--rosa-2);
+            border-radius: 16px;
+            padding: 20px 32px;
+            display: flex;
+            flex-direction: column;
 
-        & hr{
-            border: none;            /* remove o estilo padrão */
-            border-top: .12rem solid #000; /* cor preta, pode trocar */
-            margin: 16px 0; 
-        }
-
-    }
-
-    .inferior{
-        & .info_cupom_box{
-            & p{
-                display: flex;
-                align-items: stretch;
-                justify-content: flex-start;
-                gap: 10px;
-                margin-top: 10px;
+            & .titulo{
+                font-weight: bold;
+                font-size: 24px;
+                
             }
 
-            & p:first-child {
-    margin-top: 0; 
-}
+            & hr{
+                border: none;            /* remove o estilo padrão */
+                border-top: .12rem solid #000; /* cor preta, pode trocar */
+                margin: 16px 0; 
+            }
+
+        }
+
+        .inferior{
+            & .info_cupom_box{
+                & p{
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    gap: 10px;
+                    margin-top: 10px;
+                }
+
+                & p:first-child {
+        margin-top: 0; 
+    }
+            }
         }
     }
 }
 
+@media (max-width: 1440px) {
+    .cards_pai{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: -25px;
+
+        .card_cupom{
+            max-width: 780px;
+            max-height: 230px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--rosa-2);
+            border-radius: 16px;
+            padding: 20px 32px;
+            display: flex;
+            flex-direction: column;
+
+            & .titulo{
+                font-weight: bold;
+                font-size: 24px;
+                
+            }
+
+            & hr{
+                border: none;            /* remove o estilo padrão */
+                border-top: .12rem solid #000; /* cor preta, pode trocar */
+                margin: 16px 0; 
+            }
+
+        }
+
+        .inferior{
+            & .info_cupom_box{
+                & p{
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    gap: 10px;
+                    margin-top: 10px;
+                }
+
+                & p:first-child {
+        margin-top: 0; 
+    }
+            }
+        }
+    }
+}

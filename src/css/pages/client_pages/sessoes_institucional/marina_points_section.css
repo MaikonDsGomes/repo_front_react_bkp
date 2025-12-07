@@ -1,110 +1,369 @@
-.marina_points_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 390px;
 
-    padding: 60px 0px;
-    gap: 48px;
-    background-color: var(--marrom-1);
-}
+@media (min-width: 1440px) {
 
-.marina_points_title {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-}
+    .marina_points_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 390px;
 
-.marina_points_desc {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-}
+        padding: 60px 0px;
+        gap: 38px;
+        background-color: var(--marrom-1);
+    }
 
-.marina_points_bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    .marina_points_title {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
 
-    width: auto;
-    gap: 24px;
-    max-height: 94px;
-}
+    .marina_points_desc {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
 
-.marina_points_etapas {
-    display: flex;
-    flex-direction: row;
-    /* max-width: 865px; */
-    width: auto;
-    height: auto;
-    gap: -5px;
-    align-items: center;
-    justify-content: center;
-}
+    .marina_points_bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
+        width: auto;
+        gap: 24px;
+        max-height: 94px;
+    }
 
+    .marina_points_etapas {
+        display: flex;
+        flex-direction: row;
+        /* max-width: 865px; */
+        width: auto;
+        height: auto;
+        gap: 0; /* use explicit negative margins between siblings instead of gap */
+        align-items: center;
+        justify-content: center;
+    }
 
-.marina_points_etapa_ativa {
-    /* max-width: 117px; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    /* position: absolute; */
-
-    .marina_points_circle {
-        width: 60px;
-        height: 60px;
-        position: absolute;
+    /* make each etapa positioned so absolute children (circle) are relative to it */
+    .marina_points_etapas > * {
+        position: relative;
+        /* ensure they participate in layout so negative margins work */
         display: flex;
         align-items: center;
         justify-content: center;
-
-        border-radius: 32px;
-        background-color: var(--rosa-1);
-
     }
 
-    .marina_points_conexao {
-        width: 183px;
-        height: 8px;
-        background-color: var(--rosa-1);
+    /* overlap each etapa by 5px to the left (so it covers the previous connection) */
+    .marina_points_etapas > * + * {
+        margin-left: -5px;
+    }
+
+    /* stacking: circles above conexao */
+    .marina_points_etapa_ativa .marina_points_circle,
+    .marina_points_etapa_inativa .marina_points_circle {
+        z-index: 2;
+    }
+    .marina_points_etapa_ativa .marina_points_conexao,
+    .marina_points_etapa_inativa .marina_points_conexao {
+        z-index: 1;
+    }
+
+
+
+    .marina_points_etapa_ativa {
+        /* max-width: 117px; */
         display: flex;
-        border-radius: 32px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* position: absolute; */
+
+        .marina_points_circle {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 32px;
+            background-color: var(--rosa-1);
+
+        }
+
+        .marina_points_conexao {
+            width: 183px;
+            height: 8px;
+            background-color: var(--rosa-1);
+            display: flex;
+            border-radius: 32px;
+        }
     }
-}
 
-.marina_points_etapa_inativa {
-    /* max-width: 117px; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    /* position: absolute; */
+    .marina_points_etapa_inativa {
+        /* max-width: 117px; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* position: absolute; */
 
-    .marina_points_circle {
-        width: 60px;
-        height: 60px;
-        position: absolute;
+        .marina_points_circle {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 32px;
+            background-color: var(--rosa-3);
+
+        }
+
+        .marina_points_conexao {
+            width: 183px;
+            height: 8px;
+            background-color: var(--rosa-3);
+            display: flex;
+            border-radius: 32px;
+        }
+    }
+
+    /* Toggle wrapper: keeps img and text same size and cross-fades between them (desktop) */
+    .marina_points_toggle {
+        position: relative;
+        width: 90px; /* desktop size */
+        height: 90px;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        border-radius: 32px;
-        background-color: var(--rosa-3);
-
     }
 
-    .marina_points_conexao {
-        width: 183px;
-        height: 8px;
-        background-color: var(--rosa-3);
+    .marina_points_toggle_item {
+        position: absolute;
+        inset: 0;
         display: flex;
-        border-radius: 32px;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 320ms cubic-bezier(.2,.9,.2,1), transform 320ms cubic-bezier(.2,.9,.2,1);
+        opacity: 0;
+        transform: translateY(6px) scale(0.98);
+        pointer-events: none;
+    }
+
+    .marina_points_toggle_item.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .marina_points_toggle_text {
+        margin: 0;
+        color: var(--rosa-2);
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* line-height: 1; */
+        /* font-size: 1rem; */
+    }
+
+    .icon-cupom-max{
+        max-width: 90px;
+        height: auto;
+        display: block;
+    }
+}
+
+
+@media (max-width: 1440px) {
+
+    .marina_points_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 390px;
+
+        padding: 16px 0px;
+        gap: 32px;
+        background-color: var(--marrom-1);
+    }
+
+    .marina_points_title {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .marina_points_desc {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .marina_points_bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: auto;
+        gap: 8px;
+        max-height: 94px;
+    }
+
+    .marina_points_etapas {
+        display: flex;
+        flex-direction: row;
+        /* max-width: 865px; */
+        width: auto;
+        height: auto;
+        gap: 0; /* use explicit negative margins between siblings instead of gap */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* make each etapa positioned so absolute children (circle) are relative to it */
+    .marina_points_etapas > * {
+        position: relative;
+        /* ensure they participate in layout so negative margins work */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* overlap each etapa by 5px to the left (so it covers the previous connection) */
+    .marina_points_etapas > * + * {
+        margin-left: -5px;
+    }
+
+    /* stacking: circles above conexao */
+    .marina_points_etapa_ativa .marina_points_circle,
+    .marina_points_etapa_inativa .marina_points_circle {
+        z-index: 2;
+    }
+    .marina_points_etapa_ativa .marina_points_conexao,
+    .marina_points_etapa_inativa .marina_points_conexao {
+        z-index: 1;
+    }
+
+
+
+    .marina_points_etapa_ativa {
+        /* max-width: 117px; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* position: absolute; */
+
+        .marina_points_circle {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 32px;
+            background-color: var(--rosa-1);
+
+        }
+
+        .marina_points_conexao {
+            width: 65px;
+            height: 4px;
+            background-color: var(--rosa-1);
+            display: flex;
+            border-radius: 32px;
+        }
+    }
+
+    .marina_points_etapa_inativa {
+        /* max-width: 117px; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* position: absolute; */
+
+        .marina_points_circle {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 32px;
+            background-color: var(--rosa-3);
+
+        }
+
+        .marina_points_conexao {
+            width: 65px;
+            height: 4px;
+            background-color: var(--rosa-3);
+            display: flex;
+            border-radius: 32px;
+        }
+    }
+
+    /* Mobile / smaller screens: smaller toggle size */
+    .marina_points_toggle {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .marina_points_toggle_item {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 260ms ease, transform 260ms ease;
+        opacity: 0;
+        transform: translateY(4px) scale(0.98);
+        pointer-events: none;
+    }
+
+    .marina_points_toggle_item.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .marina_points_toggle_text {
+        margin: 0;
+        color: var(--rosa-2);
+        min-width: 32px;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        font-size: 0.85rem;
+    }
+
+    .icon-cupom-max{
+        max-width: 32px;
+        height: auto;
+        display: block;
     }
 }

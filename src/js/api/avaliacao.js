@@ -1,8 +1,8 @@
-import axios from "axios";
+import api from "./api_port";
 
 export async function buscarAvaliacoes() {
     try {
-        const response = await axios.get(`http://localhost:8080/avaliacao`);
+        const response = await api.get(`http://localhost:8080/avaliacao`);
         console.log(response.data)
         // Formata apenas o campo dataHorario para DD/MM/YYYY, mantendo os outros campos
         const dataFormatada = response.data.map(avaliacao => {

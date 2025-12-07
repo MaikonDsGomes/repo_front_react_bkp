@@ -1,0 +1,122 @@
+.cliente-detalhes-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.cliente-detalhes-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 500px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Impede o card inteiro de rolar */
+}
+
+.cliente-info-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Impede o header de sumir ao rolar */
+
+}
+
+.foto-cliente {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+}
+.cliente-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cliente-info div {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: start;
+}
+
+.cliente-info .info img {
+  width: 18px;
+  height: 18px;
+}
+
+.servicos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.servico-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+/* 🔹 Aqui é onde a mágica acontece */
+.agendamentos-lista {
+  flex: 1; /* Ocupa o espaço restante dentro do card */
+  overflow-y: auto; /* Cria rolagem só aqui */
+  margin-top: 10px;
+  padding-right: 8px;
+  border-top: 1px solid #eee;
+}
+
+/* Rolagem suave e discreta */
+.agendamentos-lista::-webkit-scrollbar {
+  width: 6px;
+}
+.agendamentos-lista::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.agendamento-card {
+  border: 1px solid #e91e63;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.botoes-agendamento {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+/* Mantém os botões principais fixos no card */
+/* .btn-verde, .btn-rosa {
+  flex-shrink: 0;
+  margin-top: 10px;
+} */

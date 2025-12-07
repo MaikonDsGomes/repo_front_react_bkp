@@ -24,9 +24,14 @@ export default function InfoCard({
   onPrimaryClick,
   onSecondaryClick
 }) {
+  // Defensivamente extrai os botões para evitar acessar propriedades de undefined
+  const primary = buttons?.primary ?? null;
+  const secondary = buttons?.secondary ?? null;
+
   const getSecondaryButtonText = () => {
-    if (!buttons.secondary.dynamic) return buttons.secondary.text;
-    return buttons.secondary.condition ? "Desativar" : "Ativar";
+    if (!secondary) return "";
+    if (!secondary.dynamic) return secondary.text;
+    return secondary.condition ? "Desativar" : "Ativar";
   };
 
   return (
@@ -53,20 +58,25 @@ export default function InfoCard({
           ))}
           
           <div className="dash_servico_servico_button btn-juntos">
-            <button 
-              className="btn-rosa" 
-              style={{ width: buttons.primary.width }}
-              onClick={onPrimaryClick}
-            >
-              {buttons.primary.text}
-            </button>
-            <button 
-              className="btn-branco" 
-              style={{ width: buttons.secondary.width }}
-              onClick={onSecondaryClick}
-            >
-              {getSecondaryButtonText()}
-            </button>
+            {primary && (
+              <button
+                className="btn-rosa"
+                style={{ width: primary.width ?? "auto" }}
+                onClick={onPrimaryClick}
+              >
+                {primary.text}
+              </button>
+            )}
+
+            {secondary && (
+              <button
+                className="btn-branco"
+                style={{ width: secondary.width ?? "auto" }}
+                onClick={onSecondaryClick}
+              >
+                {getSecondaryButtonText()}
+              </button>
+            )}
           </div>
         </div>
       </div>

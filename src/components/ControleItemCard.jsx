@@ -40,7 +40,12 @@ export default function ControleItemCard({
   return (
     <div className={`${cardClass} card`}>
       <div className={lineClass} style={{ alignItems: "center" }}>
-        <img src={fotoUrl} alt="icon_perfil" />
+        <img
+        className="card-foto-cliente-dashboard" 
+        src={`http://localhost:8080/usuarios/foto/${fotoUrl}`}
+        onError={(e) => { e.target.src = "/src/assets/img/usuario_foto_def.png"; }}
+        alt="icon_perfil" />
+
         <p className="paragrafo-1 semibold">{clienteNome}</p>
         {tipo === "avaliacao" && typeof estrelas === "number" && (
           <Estrelas quantidade={estrelas} />

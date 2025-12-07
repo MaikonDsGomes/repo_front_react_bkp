@@ -6,7 +6,7 @@ import NavCalendario from "/src/components/NavCalendario.jsx";
 import Popup from "../../components/Popup.jsx";
 import "../../css/popup/detalhesAgendamento.css";
 import Swal from 'sweetalert2';
-import {mensagemSucesso, mensagemErro} from "../../js/utils.js"
+import {mensagemSucesso, mensagemErro, formatarDataBR} from "../../js/utils.js"
 import {buscarDadosHistoricoPorIdAgendamento} from "../../js/api/maikon.js"
 
 import { buscarAtendimentosPassadosPorIdFuncionario, concluirAgendamento, buscarDetalhesAgendamento } from "../../js/api/agendamento";
@@ -72,14 +72,14 @@ export default function Calendario_atendimentos() {
 
         {/* TÍTULO */}
         <div className="dash_section_container">
-          <h1 className="supertitulo-1">Atendimentos Passados:</h1>
+          <h1 className="titulo-1">Atendimentos Passados:</h1>
         </div>
 
         {/* CARD DE ATENDIMENTO */}
         {agendamentos.length > 0 ? (
           agendamentos.map((agendamento, index) => (
         <div key={index} className="dash_section_container">
-          <div className="atendimento_passados_card_box card">
+          <div className={`atendimento_passados_card_box card ${agendamento.statusAgendamento.status === "PAGAMENTO_PENDENTE" ? "card_pagamento_pendente" : "card_agendamento_concluido" }`}>
             <div className="info_box_atendimento_passados_card_box">
               <p className="paragrafo-1 semibold info">
                 <img
@@ -99,13 +99,13 @@ export default function Calendario_atendimentos() {
                   alt="icone hora"
                   style={{ height: "24px" }}
                 />
-                {agendamento.data} {agendamento.inicio}
+                { formatarDataBR(agendamento.data)} {agendamento.inicio}
               </p>
 
               <div className="atendimentos_passados_infos">
                 <p className="paragrafo-2">
-                  <a className="semibold">Status:</a>{" "}
-                  <i> {agendamento.statusAgendamento.status}</i>
+                  <a className="semibold">Status: </a>{" "}
+                  <i className= {agendamento.statusAgendamento.status === "PAGAMENTO_PENDENTE" ? "pagamento_pendente" : "controle_agendamento_concluido"} >{agendamento.statusAgendamento.status}</i>
                 </p>
                 <p className="paragrafo-2">
                   <a className="semibold">Valor:</a> <i>R${agendamento.preco}</i>
@@ -129,9 +129,7 @@ export default function Calendario_atendimentos() {
 
             )}
 
-              {(agendamento.statusAgendamento.status === "CONCLUIDO" || 
-                agendamento.statusAgendamento.status === "CANCELADO") && (
-                  <button 
+            <button 
                     className="btn-branco" 
                     onClick={() => {
                       carregarDadosHistorico(agendamento.id)
@@ -140,7 +138,7 @@ export default function Calendario_atendimentos() {
                   >
                     Detalhes
                   </button>
-              )}
+              
 
             </div>
           </div>
@@ -154,11 +152,6 @@ export default function Calendario_atendimentos() {
 }
 
 
-//Colocar na utils
-function formatarDataBR(dataISO) {
-  const [ano, mes, dia] = dataISO.split("-");
-  return `${dia}/${mes}/${ano}`;
-}
 
 
 function ConcluirAgendamentoPop({ dados, onClose, atualizarAgendamentos  }) {
@@ -172,7 +165,7 @@ function ConcluirAgendamentoPop({ dados, onClose, atualizarAgendamentos  }) {
       <>
         <div className="calendario_box_popup_concluir_agendamento">
           <div className="calendario_nome_cliente_box">
-            <p className="paragrafo-1">{dados.usuario?.nome}</p>
+            <p className="paragrafo-1 semibold">{dados.usuario?.nome}</p>
           </div>
           <div className="calendario_box_info_concluir_agendamento">
             <p><strong>Servico:</strong> {dados.servico.nome}</p>
@@ -204,6 +197,7 @@ function ConcluirAgendamentoPop({ dados, onClose, atualizarAgendamentos  }) {
                   onClose(); // fecha o modal
                   atualizarAgendamentos(); // atualiza a lista no pai
                 } catch (err) {
+                  onClose();
                   mensagemErro("Erro ao concluir agendamento");
                 }
               }}

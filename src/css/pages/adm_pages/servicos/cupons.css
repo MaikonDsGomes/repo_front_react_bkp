@@ -24,3 +24,33 @@
   height: auto;
   /* Quando a input tiver um nome, a classe vai organizar o titulo com o campo de input */
 }
+
+.dash_marina_points_line{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  /* gap: 8px; */
+}
+
+.input_marina_points{
+    width: 20%;
+    max-width: 100px;
+    height: 35px;
+    padding: 4px;
+    margin-left: 8px;
+    margin-right: 18px;
+  
+    background-color: var(--rosa-4);
+    border: solid 1px var(--marrom-1);
+    border-radius: 4px;
+
+  }
+
+.form_marina_p{
+  /* width: 100vw !important; */
+  min-width: 55vw !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 24px;
+}

@@ -1,0 +1,143 @@
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.form-card {
+  background: #fff;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 18px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  position: relative;
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-fechar:hover {
+  color: #e20074;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-card input,
+.form-card select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  border-color: #e20074;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(226, 0, 116, 0.2);
+}
+
+.form-card .btn-rosa {
+  background-color: #e20074;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form-card .btn-rosa:hover {
+  background-color: #ff3a9b;
+}
+
+/* SERVIÇOS LISTA */
+.servicos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.servicos-lista::-webkit-scrollbar {
+  width: 6px;
+}
+
+.servicos-lista::-webkit-scrollbar-thumb {
+  background-color: #e20074;
+  border-radius: 10px;
+}
+
+.servico-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.servico-item:hover {
+  background-color: #ffe7f3;
+  border-color: #e20074;
+}
+
+.servico-item input[type="checkbox"] {
+  accent-color: #e20074;
+}
+
+.form-card h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
+}

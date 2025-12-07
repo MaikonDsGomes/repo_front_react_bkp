@@ -29,8 +29,8 @@ export function PopupAlerta({ mensagem, funcao, onClose }) {
         </div>
           <p className="paragrafo-2" style={{ textAlign: "center" }}>{mensagem}</p>
         <div className="btn-juntos">
-          <button className="btn-rosa" onClick={funcao}>Sim</button>
-          <button className="btn-branco" onClick={onClose}>Não</button>
+          <button style={{width:'50%'}} className="btn-rosa" onClick={funcao}>Sim</button>
+          <button style={{width:'50%'}} className="btn-branco" onClick={onClose}>Não</button>
         </div>
       </>
     </Popup>

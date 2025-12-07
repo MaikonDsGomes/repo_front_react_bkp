@@ -1,0 +1,6 @@
+.calendario_popup_detalhes_unico_evento_box {
+    & button {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
